@@ -21,7 +21,15 @@ const promiseArr = [promise1, promise2, promise3, promise4];
  * when promiseArr was passed as the argument
  */
 
-export const result1 = val; // Your code here
+export const result1 = Promise.all(promiseArr)
+.then((data) => {
+  return data;
+})
+.catch((err) => {
+  console.log(err);
+  return err;
+});  // Your code here
+    
 
 /**
  * @task
@@ -33,7 +41,14 @@ export const result1 = val; // Your code here
  * when promiseArr was passed as the argument
  */
 
-export const result2 = val; // Your code here
+export const result2 = Promise.any(promiseArr)
+.then((data) => {
+  return data;
+})
+.catch((err) => {
+  console.log(err);
+  return err;
+}); // Your code here
 
 /**
  * @task
@@ -45,7 +60,14 @@ export const result2 = val; // Your code here
  * when promiseArr was passed as the argument
  */
 
-export const result3 = val; // Your code here
+export const result3 = Promise.allSettled(promiseArr)
+.then((data) => {
+  return data;
+})
+.catch((err) => {
+  console.log(err);
+  return err;
+}); // Your code here
 
 /**
  * @task
@@ -56,7 +78,7 @@ export const result3 = val; // Your code here
  * Example: export const newPromiseArr = promiseArr.<method>()...
  */
 
-export const newPromiseArr = val; // Your code here
+export const newPromiseArr = promiseArr.filter(x => x === promise4); // Your code here
 
 // Do NOT refactor or update result 4, it's all set to work
 export const result4 = Promise.race(newPromiseArr)

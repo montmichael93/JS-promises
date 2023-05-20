@@ -15,6 +15,15 @@
  */
 
 // Your code goes here
+export var getPromise = new Promise((resolve) => 
+setTimeout(() => {
+    resolve('The PROMISE was RESOLVED');
+}, 1000));
+
+getPromise.then((message) => {
+    console.log(message);
+    return message
+});
 
 
 
