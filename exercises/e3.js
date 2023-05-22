@@ -16,8 +16,7 @@
 */ 
 export const getPromise = (num) => {
   // Your code goes here...
-  var promise = new Promise((resolve) => resolve(num));
-  return num % 1 === 0 ? promise : 0;
+  return num % 1 === 0 ? new Promise((resolve) => resolve(num)) : 0;
 };
 
 

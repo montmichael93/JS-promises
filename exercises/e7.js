@@ -23,7 +23,7 @@ export function parsePromised(json) {
   // Your code goes here...
   const executor = (resolve, reject) => {
     try {
-      JSON.parse(json)
+      resolve(JSON.parse(json))
     } catch(error){
       reject(error)
     }
@@ -65,7 +65,7 @@ export const handlePromise = (promised) => {
 
   return promised
     .then(onFulfilled)
-    .catch((err) => console.log(err.message));
+    .catch((err) =>  (err.message)?  onReject(err)  : console.log(err));
 
 }
 

@@ -20,8 +20,7 @@ export const getPromise = (bool) => {
   const executor = (resolve, reject) => {
     bool === false ? reject('The PROMISE was REJECTED') : resolve('The PROMISE was RESOLVED')
   }
-  const promise = new Promise(executor);
-  return promise
+  return new Promise(executor);
 };
 
 /**
@@ -35,10 +34,10 @@ export const getPromise = (bool) => {
 
 export const handlePromise = (promise) => {
   // Your code goes here...
-  const onFulfilled = (data) => data;
-  const onRejected = () => 'Uh Oh';
-  return promise
-  .then(onFulfilled, onRejected)
+  return promise.then(
+    (data) => data,
+    () => 'Uh Oh'
+  );
 };
 
 // === TEST YOURSELF ===

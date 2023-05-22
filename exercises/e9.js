@@ -37,9 +37,12 @@ export function alwaysThrows() {
  * The function must be exported
  */
 
+
+// if (err.message)
+
 export function onReject(input) {
   // Your code goes here...
-  ((typeof input) === "object") ? console.log(input.message) : console.log(input);
+  (input.message) ? console.log(input.message) : console.log(input);
 }
 
 /**
@@ -64,7 +67,7 @@ export function onReject(input) {
  */
 
 // Your code goes here...
-export const promise = Promise.resolve()
+export const promise = Promise.resolve(iterate(1))
   .then(iterate)
   .then(iterate)
   .then(iterate)

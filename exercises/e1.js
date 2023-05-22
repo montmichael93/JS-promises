@@ -18,9 +18,7 @@
 export var getPromise = new Promise((resolve) => 
 setTimeout(() => {
     resolve('The PROMISE was RESOLVED');
-}, 1000));
-
-getPromise.then((message) => {
+}, 1000)).then((message) => {
     console.log(message);
     return message
 });
